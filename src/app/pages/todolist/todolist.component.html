@@ -1,0 +1,23 @@
+<div class="cardContainer">
+    <div class="main-header">
+        <span>TO DO LIST</span>
+    </div>
+    <form class="main-container" [formGroup]="MainForm">
+        <div class="todo-add-section">
+            <div class="todo-fields" formGroupName="Task">
+                <input type="text" #input placeholder="Enter your todo....!" formControlName="text">
+                <button *ngIf="!isEdit" class="btn addBtn" (click)="addTask()">Add</button>
+                <button *ngIf="isEdit" class="btn editBtn" (click)="addTask()">Edit</button>
+            </div>
+        </div>
+        
+        <ul class="todolist-container">
+            <li *ngFor="let task of tasks" (click)="editTask(task?.id)">
+                <div class="task-container">
+                    <span>{{task?.text}}</span>
+                    <button class="btn deleteBtn" (click)="deleteTask(task?.id)">delete</button>
+                </div>
+            </li>
+        </ul>
+    </form>
+</div>
