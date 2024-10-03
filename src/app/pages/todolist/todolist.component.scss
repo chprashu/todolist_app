@@ -1,13 +1,19 @@
 .main-header{
     margin: 10px auto;
-    width: 100%;
     display: flex;
     justify-content: center;
 
-    span{
-        margin: 0 auto;
-        font-weight: 600;
-    }
+    span {
+            font-size: 24px;
+            margin: 0 auto;
+            font-weight: 600;
+            color: #ffffff9e;
+            // background: rgb(220, 237, 42);
+            // background: linear-gradient(80deg, rgba(220, 237, 42, 1) 0%, rgba(42, 237, 64, 1) 16%, rgba(18, 238, 239, 1) 31%, rgba(41, 68, 237, 1) 69%, rgba(210, 3, 237, 1) 100%);
+            // background-clip: text;
+            // -webkit-background-clip: text;
+            // -webkit-text-fill-color: transparent;
+        }
 }
 
 .main-container{
@@ -46,7 +52,7 @@
     .todolist-container{
         width: 100%;
         margin-top: 30px;
-        height: 75vh;
+        height: 70vh;
         overflow-y: auto;
 
         li{

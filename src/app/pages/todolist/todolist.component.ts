@@ -46,7 +46,7 @@ export class TodolistComponent implements OnInit {
     let text = this.MainForm.controls.Task.get('text')?.value;
     let id = this.MainForm.controls.Task.get('id')?.value;
 
-    let tasks: Task[] = this.storageService.getItem(TODO_KEY);
+    let tasks: Task[] = this.storageService.getItem(TODO_KEY) ? this.storageService.getItem(TODO_KEY) : [];
 
     var task = null;
     var index = null;
@@ -72,7 +72,7 @@ export class TodolistComponent implements OnInit {
       this.storageService.setItem(tasks, TODO_KEY);
     }
 
-    this.MainForm.controls.Task.get('text')?.reset();
+    this.MainForm.controls.Task.reset();
     this.isEdit = false;
   }
 
