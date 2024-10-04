@@ -1,45 +1,69 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
 
-*{
-    margin: 0px;
-    padding: 0px;
-    font-family: "Roboto", sans-serif;
-    font-weight: 400;
-    font-style: normal;
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
-:root{
-    --bg-color:#2A2E33;
-    --container-bg-color: #1A1D20;
-    --border-color: #cccccc5f;
+:root {
+  --bg-color: var(--gray-800);
+  --container-bg-color: var(--gray-900);
+  --nav-bar-bg: var(--gray-900);
+  --border-color: #cccccc5f;
+  --app-text-color: var(--gray-300);
+  --app-toast-backgroung: #42424286;
+
 }
 
-body{
-    background-color: var(--bg-color);
-    width: 100%;
+body {
+  background-color: var(--bg-color);
+  width: 100%;
 }
 
 /* width */
 ::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
+  width: 8px;
+  height: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #00000000;
+
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+  // display: none;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #7c7c7c;
+}
+
+.p-toast .p-toast-message {
+  background: var(--app-toast-backgroung) !important;
+
+  .p-toast-detail {
+    color: var(--app-text-color) !important;
   }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #00000000;
-  
+
+  .p-toast-icon-close{
+    color: var(--red-500) !important;
   }
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 4px;
-    // display: none;
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #7c7c7c;
-  }
+}
+
+.p-toast .p-toast-message.p-toast-message-success .p-toast-summery {
+  color: #439446 !important;
+}
+
+.p-toast .p-toast-message.p-toast-message-success .p-toast-message-icon{
+  color: #439446 !important;
+}

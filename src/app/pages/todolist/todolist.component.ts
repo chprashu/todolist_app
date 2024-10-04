@@ -4,6 +4,7 @@ import { LocalstorageService } from 'src/app/services/localstorage.service';
 import { checkEmpty } from 'src/app/shared/_common_functions';
 import { TODO_ID, TODO_KEY } from 'src/app/shared/_global_consts';
 import { Task } from 'src/app/shared/required-models.modal';
+import { MessageService } from 'primeng/api'
 
 @Component({
   selector: 'app-todolist',
@@ -16,7 +17,8 @@ export class TodolistComponent implements OnInit {
 
   constructor(
     private storageService: LocalstorageService,
-    private fb: FormBuilder) { }
+    private fb: FormBuilder,
+    private messageService: MessageService) { }
 
   ngOnInit(): void {
   }
@@ -50,10 +52,13 @@ export class TodolistComponent implements OnInit {
 
     var task = null;
     var index = null;
-
+    let action: 'create' | 'edit';
     if (checkEmpty(id)) {
+      action = 'edit';
       task = tasks.find(x => x.id == id);
       index = tasks.findIndex(x => x.id == id);
+    }else{
+      action = 'create';
     }
 
     if (checkEmpty(text)) {
@@ -70,6 +75,8 @@ export class TodolistComponent implements OnInit {
       }
 
       this.storageService.setItem(tasks, TODO_KEY);
+      const message = action == 'create' ? 'Added Successfully' : 'Edited Successfully';
+      this.messageService.add({key: 'msg', severity: 'success', summary: 'Success', detail: message});
     }
 
     this.MainForm.controls.Task.reset();
@@ -81,6 +88,7 @@ export class TodolistComponent implements OnInit {
     let index = tasks.findIndex(x => x.id == id);
     tasks.splice(index, 1);
     this.storageService.setItem(tasks, TODO_KEY);
+    this.messageService.add({key: 'msg', severity: 'success', summary: 'Success', detail: 'Deleted Successfully', life: 200000});
   }
 
 }
