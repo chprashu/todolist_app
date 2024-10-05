@@ -90,7 +90,7 @@ export class TodolistComponent implements OnInit {
     let index = tasks.findIndex(x => x.id == id);
     tasks.splice(index, 1);
     this.storageService.setItem(tasks, TODO_KEY);
-    this.messageService.add({key: 'msg', severity: 'success', summary: 'Success', detail: 'Deleted Successfully', life: 200000});
+    this.messageService.add({key: 'msg', severity: 'success', summary: 'Success', detail: 'Deleted Successfully'});
   }
 
 }
