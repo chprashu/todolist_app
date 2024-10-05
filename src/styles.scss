@@ -60,10 +60,26 @@ body {
   }
 }
 
-.p-toast .p-toast-message.p-toast-message-success .p-toast-summery {
-  color: #439446 !important;
+.p-toast .p-toast-message.p-toast-message-success{
+  color: var(--green-500) !important;
 }
 
 .p-toast .p-toast-message.p-toast-message-success .p-toast-message-icon{
-  color: #439446 !important;
+  color: var(--green-500) !important;
+}
+
+.p-toast .p-toast-message.p-toast-message-warn{
+  color: var(--yellow-500) !important;
+}
+
+.p-toast .p-toast-message.p-toast-message-warn .p-toast-message-icon{
+  color: var(--yellow-500) !important;
+}
+
+.p-toast .p-toast-message.p-toast-message-info{
+  color: var(--blue-500) !important;
+}
+
+.p-toast .p-toast-message.p-toast-message-info .p-toast-message-icon{
+  color: var(--blue-500) !important;
 }

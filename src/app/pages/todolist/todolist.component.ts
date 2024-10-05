@@ -77,6 +77,8 @@ export class TodolistComponent implements OnInit {
       this.storageService.setItem(tasks, TODO_KEY);
       const message = action == 'create' ? 'Added Successfully' : 'Edited Successfully';
       this.messageService.add({key: 'msg', severity: 'success', summary: 'Success', detail: message});
+    }else{
+      this.messageService.add({key: 'msg', severity: 'info', summary: 'Info', detail: 'Please enter your To-Do...!'})
     }
 
     this.MainForm.controls.Task.reset();
