@@ -1,11 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
-import { TodolistComponent } from './pages/todolist/todolist.component';
+import { ErrorComponent } from './pages/error/error.component';
+import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
   {path: 'login', component:LoginComponent},
-  {path: 'todo', component:TodolistComponent }
+  { path: 'main', 
+    canActivate: [AuthGuard],
+    loadChildren: () => import('./pages/admin/admin.module').then((x) => x.AdminModule) },
+  {path: '', redirectTo: '/login', pathMatch:"full"},
+  {path: '**', component: ErrorComponent},
 ];
 
 @NgModule({

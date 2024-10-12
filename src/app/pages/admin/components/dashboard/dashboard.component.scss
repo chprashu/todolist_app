@@ -1,0 +1,50 @@
+.nav-bar{
+    height: 7vh;
+    width: 100%;
+    background-color: var(--nav-bar-bg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+
+    .main-header span{
+        color: #ccc;
+        font-weight: 600;
+    }
+
+    .menus{
+        display: flex;
+        gap: 20px;
+        align-items: center;
+
+        a{
+            text-decoration: none;
+            color: #cccccc6c;
+            transition: all 0.3s ease;
+        }
+
+        a:hover{
+            color: #ccc;
+        }
+
+        a.active{
+            color: #ccc;
+        }
+    }
+}
+
+.footer{
+    position: absolute;
+    bottom: 0px;
+    height: 4vh;
+    background-color: var(--nav-bar-bg);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    span{
+        font-size: 15px;
+        color: #ccc;
+    }
+}

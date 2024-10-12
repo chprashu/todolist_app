@@ -1,1 +1,20 @@
-
+<form action="" [formGroup]="LoginForm" (ngSubmit)="onSubmit(LoginForm)">
+    <div class="main-form">
+        <span>Login Form</span>
+        <div class="fields-container">
+            <div class="fields">
+                <label for="">Usename</label>
+                <input type="text" placeholder="Enter your username..." formControlName="username">
+                <mat-hint>hint: {{username}}</mat-hint>
+                <mat-error *ngIf="LoginForm.get('username')?.invalid && LoginForm.get('username')?.touched">Please Enter Username</mat-error>
+            </div>
+            <div class="fields">
+                <label>Password</label>
+                <input type="password" placeholder="Enter Your password..." formControlName="password">
+                <mat-hint>hint: {{password}}</mat-hint>
+                <mat-error *ngIf="LoginForm.get('password')?.invalid && LoginForm.get('password')?.touched">Please Enter Password</mat-error>
+            </div>
+        </div>
+        <button pButton pRipple type="submit" label="Login" class="p-button-raised p-button-info"></button>
+    </div>
+</form>

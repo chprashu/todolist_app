@@ -2,8 +2,8 @@
     <div class="todo-add-section">
         <div class="todo-fields" formGroupName="Task">
             <input type="text" #input placeholder="Enter your todo....!" formControlName="text">
-            <button *ngIf="!isEdit" class="btn addBtn" (click)="addTask()">Add</button>
-            <button *ngIf="isEdit" class="btn editBtn" (click)="addTask()">Edit</button>
+            <button pButton pRipple type="submit" label="Add" class="p-button-raised p-button-text" *ngIf="!isEdit"  (click)="addTask()"></button>
+            <button pButton pRipple type="submit" label="Edit" class="p-button-raised p-button-text p-button-warning" *ngIf="isEdit"  (click)="addTask()"></button>
         </div>
     </div>
     
@@ -11,7 +11,7 @@
         <li *ngFor="let task of tasks" (click)="editTask(task?.id)">
             <div class="task-container">
                 <span>{{task?.text}}</span>
-                <button class="btn deleteBtn" (click)="deleteTask(task?.id)">delete</button>
+                <button pButton pRipple type="button" class="p-button-rounded p-button-danger p-button-text" icon="pi pi-trash" (click)="deleteTask(task?.id)"></button>
             </div>
         </li>
     </ul>

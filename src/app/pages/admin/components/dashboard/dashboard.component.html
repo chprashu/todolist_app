@@ -1,0 +1,20 @@
+<div style="display: flex; flex-direction: column; gap: 10px;">
+    <div>
+        <div class="nav-bar">
+            <div class="main-header">
+                <span>MY APP</span>
+            </div>
+            <div class="menus">
+                <a routerLink="./home" routerLinkActive="active">Home</a>
+                <a routerLink="./todolist" routerLinkActive="active">To Do</a>
+                <button pButton pRipple type="button" label="Logout" class="p-button-info" (click)="logout()"></button>
+            </div>
+        </div>
+    </div>
+    <div>
+        <router-outlet></router-outlet>
+    </div>
+    <!-- <div class="footer">
+        <span class="logo">©</span>&nbsp;<span>Copyright | 2024</span>
+    </div> -->
+</div>

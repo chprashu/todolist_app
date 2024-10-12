@@ -15,7 +15,7 @@
   --nav-bar-bg: var(--gray-900);
   --border-color: #cccccc5f;
   --app-text-color: var(--gray-300);
-  --app-toast-backgroung: #42424286;
+  --app-toast-backgroung: #424242cb;
 
 }
 
@@ -28,6 +28,7 @@ body {
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
+  display: none;
 }
 
 /* Track */
@@ -82,4 +83,31 @@ body {
 
 .p-toast .p-toast-message.p-toast-message-info .p-toast-message-icon{
   color: var(--blue-500) !important;
+}
+
+.p-toast .p-toast-message.p-toast-message-error{
+  color: var(--red-500) !important;
+}
+
+.p-toast .p-toast-message.p-toast-message-error .p-toast-message-icon{
+  color: var(--red-500) !important;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.mat-error{
+  font-size: 14px;
+  color: var(--red-400);
+}
+
+.mat-hint{
+  font-size: 10px;
+  color: var(--gray-700);
+}
+
+
+input.ng-invalid.ng-touched{
+  border-color: var(--red-400) !important;
 }

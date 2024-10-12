@@ -41,5 +41,9 @@ export class LocalstorageService {
     return CryptoJS.AES.encrypt(JSON.stringify(items), ENCRYPT_KEY).toString();
   }
 
+  removeItem(key: string){
+    localStorage.removeItem(key);
+  }
+
   
 }
