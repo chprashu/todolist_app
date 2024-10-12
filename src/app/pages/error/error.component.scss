@@ -1,0 +1,28 @@
+.error-page{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    
+    .code{
+        font-size: 30px;
+        font-weight: 600;
+        color: var(--gray-900);
+    }
+
+    .text{
+        font-size: 16px;
+        color: var(--gray-700);
+    }
+
+    a{
+        color: var(--blue-500);
+        text-decoration: underline;
+    }
+}
