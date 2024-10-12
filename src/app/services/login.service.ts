@@ -28,7 +28,7 @@ export class LoginService {
     if(form.username == 'admin' && form.password == 'admin@123'){
       let token = "nkjhYUgdjgsdhfbjha86354y2837skdhlskd==-sodufu23!";
       this.storageService.setItem(token, AUTH_ID);
-      this.response = {response: "Successfully Logged In", responseId: true};
+      this.response = {response: "Successfully Logged In..!", responseId: true};
       return this.response;
     }else{
       return this.response = {response: "Bad Credentials..!", responseId: false};
