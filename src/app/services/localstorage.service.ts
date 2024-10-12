@@ -42,6 +42,9 @@ export class LocalstorageService {
   }
 
   removeItem(key: string){
+    /**
+     * Removing any item form localstorage
+     */
     localStorage.removeItem(key);
   }
 
