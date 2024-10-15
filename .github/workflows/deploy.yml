@@ -22,7 +22,7 @@ jobs:
       run: npm install
 
     - name: Build Angular project
-      run: npm run build -- --output-path=docs --base-href /todolist_app/
+      run: npm run build -- --output-path=dist --base-href /todolist_app/
 
     - name: Deploy to GitHub Pages (using master branch)
       env:
