@@ -24,12 +24,13 @@ jobs:
     - name: Build Angular project
       run: npm run build -- --output-path=dist --base-href /todolist_app/
 
-    - name: Deploy to GitHub Pages (using master branch)
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Configure Git
       run: |
-        git config user.name "github-actions[bot]"
-        git config user.email "github-actions[bot]@users.noreply.github.com"
-        git add docs
-        git commit -m "Deploy to GitHub Pages" || echo "No changes to commit"
-        git push origin master
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+    - name: Deploy to GitHub Pages
+      run: |
+          git add dist
+          git commit -m "Deploy to GitHub Pages"
+          git push origin master  # Ensure you're pushing to the right branch
