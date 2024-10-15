@@ -31,6 +31,6 @@ jobs:
 
     - name: Deploy to GitHub Pages
       run: |
-          git add -f dist
+          git add doc
           git commit -m "Deploy to GitHub Pages"
           git push origin master  # Ensure you're pushing to the right branch
