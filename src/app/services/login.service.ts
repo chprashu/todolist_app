@@ -3,6 +3,7 @@ import { AUTH_ID } from '../shared/_global_consts';
 import { checkEmpty } from '../shared/_common_functions';
 import { LocalstorageService } from './localstorage.service';
 import { FinalRes } from '../shared/required-models.modal';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -13,29 +14,34 @@ export class LoginService {
 
   constructor(
     private storageService: LocalstorageService,
+    private http: HttpClient
   ) { }
 
 
-  isLoggedin():boolean{
-    if(checkEmpty(localStorage.getItem(AUTH_ID))){
+  isLoggedin(): boolean {
+    if (checkEmpty(localStorage.getItem(AUTH_ID))) {
       return true;
-    }else{
+    } else {
       return false;
     }
   }
 
-  login(form: any): FinalRes{
-    if(form.username == 'admin' && form.password == 'admin@123'){
+  login(form: any): FinalRes {
+    if (form.username == 'admin' && form.password == 'admin@123') {
       let token = "nkjhYUgdjgsdhfbjha86354y2837skdhlskd==-sodufu23!";
       this.storageService.setItem(token, AUTH_ID);
-      this.response = {response: "Successfully Logged In..!", responseId: true};
+      this.response = { response: "Successfully Logged In..!", responseId: true };
       return this.response;
-    }else{
-      return this.response = {response: "Bad Credentials..!", responseId: false};
+    } else {
+      return this.response = { response: "Bad Credentials..!", responseId: false };
     }
   }
 
-  logout(){
+  logout() {
     this.storageService.removeItem(AUTH_ID);
+  }
+
+  fetchData() {
+    return this.http.get<any>('');
   }
 }

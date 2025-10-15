@@ -8,7 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './pages/login/login.component';
 import { DashboardComponent } from './pages/admin/components/dashboard/dashboard.component';
 import { ToastModule } from 'primeng/toast'
-import { MessageService} from 'primeng/api';
+import { MessageService } from 'primeng/api';
 import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { ErrorComponent } from './pages/error/error.component';
 import { MatButtonModule } from '@angular/material/button'
@@ -16,6 +16,7 @@ import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     ButtonModule,
     RippleModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    HttpClientModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]
